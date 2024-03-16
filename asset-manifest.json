@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.36ebe528.css",
+    "main.js": "./static/js/main.0f55c31a.js",
+    "static/js/453.83234151.chunk.js": "./static/js/453.83234151.chunk.js",
+    "static/media/hire.jpg": "./static/media/hire.3494a04c0657efe90515.jpg",
+    "static/media/payment.jpg": "./static/media/payment.67ba3a97a1480eac67b6.jpg",
+    "static/media/education-collage-concept.jpg": "./static/media/education-collage-concept.299916b99393d6f7f74e.jpg",
+    "static/media/hire-hand.jpg": "./static/media/hire-hand.c12536a1453fda11ba89.jpg",
+    "static/media/albin.png": "./static/media/albin.9a1c84442af01ba790b8.png",
+    "static/media/header.png": "./static/media/header.95d9b28050e7d7b364d2.png",
+    "static/media/e-commerce.jpeg": "./static/media/e-commerce.28cf6f2a4a20fbc31b4d.jpeg",
+    "static/media/automotive.jpeg": "./static/media/automotive.bf622ee311feb1538ef3.jpeg",
+    "static/media/e-learn.jpeg": "./static/media/e-learn.684992d3c8918176efc2.jpeg",
+    "static/media/logo.svg": "./static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "./index.html",
+    "main.36ebe528.css.map": "./static/css/main.36ebe528.css.map",
+    "main.0f55c31a.js.map": "./static/js/main.0f55c31a.js.map",
+    "453.83234151.chunk.js.map": "./static/js/453.83234151.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36ebe528.css",
+    "static/js/main.0f55c31a.js"
+  ]
+}
