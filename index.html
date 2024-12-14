@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Dock Menu with Toolbar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="plugin/dist/js/jquery.animatedheadline.js"></script>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dockItems = [
+            { label: 'Home', icon: 'fa fa-home', pageContent: 'Welcome to Home!', template: "#about-us-template" },
+            { label: 'About Me', icon: 'fa fa-headset', pageContent: 'Search for your favorite content!', template: "#about-us-template" },
+            { label: 'Portfolio', icon: 'fa fa-folder', pageContent: 'Adjust your preferences here.', template: "#portfolio-template" },
+            { label: 'Contact Me', icon: 'fa fa-comments', pageContent: 'You have logged out successfully.', template: "#contact-template" },
+
+        ];
+
+        const dockContainer = document.querySelector('.dock-container');
+        const body = document.body;
+
+        dockItems.forEach(item => {
+            const dockItem = document.createElement('div');
+            dockItem.classList.add('dock-item');
+            dockItem.innerHTML = `<div class="dock-icon"><i class="${item.icon}"></i></div><div class="dock-label">${item.label}</div>`;
+            dockItem.addEventListener('click', () => openPage(item));
+            dockContainer.appendChild(dockItem);
+        });
+
+        /**
+         * Creates a new page and appends it to the body if it doesn't already exist. 
+         * Then sets the innerHTML of the page content to the HTML of the given template.
+         * If the page already exists, it simply sets the display property to 'flex' and adds the 'active' class to it.
+         * @param {Object} item - The item containing the template property.
+         */
+        function openPage(item) {
+
+            let page = document.querySelector('.page');
+            if (!page && item.label != 'Home') {
+                page = document.createElement('div');
+                page.classList.add('page');
+
+                const toolbar = document.createElement('div');
+                toolbar.classList.add('toolbar');
+
+                const minimizeButton = document.createElement('button');
+                minimizeButton.classList.add('minimize-button');
+                minimizeButton.innerHTML = '<i class="fa fa-window-minimize"></i>';
+                minimizeButton.addEventListener('click', () => {
+                    page.style.display = 'none';
+                });
+
+                const closeButton = document.createElement('button');
+                closeButton.innerHTML = '<i class="fa fa-times"></i>';
+                closeButton.addEventListener('click', () => {
+                    page.remove();
+                });
+
+                toolbar.appendChild(minimizeButton);
+                toolbar.appendChild(closeButton);
+
+                const pageContent = document.createElement('div');
+                pageContent.classList.add('page-content');
+
+                page.appendChild(toolbar);
+                page.appendChild(pageContent);
+                body.appendChild(page);
+            }
+            const pageContent = page.querySelector('.page-content');
+            pageContent.innerHTML = $(item.template).html();
+            page.style.display = 'flex';
+            page.classList.add('active');
+
+        }
+
+    });
+</script>
+</head>
+
+<body>
+
+    <div class="screen-banner ">
+        <h1>ALBIN <span>THOMAS</span></h1>
+        <p class="cd-headline clip is-full-width">
+            <span>I am a </span>
+            <span class="cd-words-wrapper">
+                <b class="is-visible">Full-stack Developer</b>
+                <b>Python Developer</b>
+                <b>PHP Developer</b>
+                <b>Angular Developer</b>
+                <b>React Developer</b>
+                <b>Wordpress Developer</b>
+            </span>
+        </p>
+    </div>
+
+
+    <div class="dock-container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+    <div class="abouts" id="about-us-template" style="display: none;">
+
+        <div class="container about-section pf-page">
+            <div class="section-container">
+                <div class="page-heading">
+                    <span class="icon"><img src="./img/albin.0bd9326f8fbc8520729a 1.png" /></span>
+                    <h2>ABOUT ME</h2>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <!--Personal Intro-->
+                        <!-- <h3 class="mb-20">Full-stack Developer</h3> -->
+                        <p>Full-Stack Developer with 7+ years of experience in building scalable
+                            and high-performance web applications. Proficient in developing
+                            backend systems, creating dynamic user interfaces, and deploying
+                            applications in cloud-based environments. Skilled in modern
+                            frameworks, CMS platforms, and RESTful API development. Passionate
+                            about writing clean, maintainable code and staying updated with the
+                            latest trends in web development.</p>
+
+
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <h3 class="mb-20">EDUCATION</h3>
+                        <section class="education-timeline">
+                            <div class="education-item">
+                                <div class="circle"></div>
+                                <div class="content">
+                                    <h2>P.G Deploma in Computer hardware and networking</h2>
+                                    <p class="institution">Selevanta Technologies | Thodupuzha</p>
+                                    <p class="duration">2016-2017</p>
+                                    <p class="details">
+                                        The Post Graduate Diploma in Computer Hardware and Networking is a specialized
+                                        program designed to provide in-depth knowledge and practical skills in computer
+                                        hardware, networking technologies, and IT infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="circle"></div>
+                                <div class="content">
+                                    <h2>Master of Science in Electronics</h2>
+                                    <p class="institution">Al-Azhar College of Arts & Science | Thodupuzha</p>
+                                    <p class="duration">2014-2016</p>
+                                    <p class="details">
+                                        The Master of Science in Electronics is an advanced degree program focused on
+                                        equipping students with specialized knowledge and research skills in the field
+                                        of electronics and its applications. This program provides a strong theoretical
+                                        foundation coupled with hands-on practical experience in designing, analyzing,
+                                        and implementing cutting-edge electronic systems
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="circle"></div>
+                                <div class="content">
+                                    <h2>Bachelor of Science in Electronics</h2>
+                                    <p class="institution">Al-Azhar College of Arts & Science | Thodupuzha</p>
+                                    <p class="duration">2011 - 2014</p>
+                                    <p class="details">
+                                        The Bachelor of Science in Electronics is an undergraduate program that offers a
+                                        strong foundation in the principles and applications of electronics and
+                                        electrical systems. This program combines theoretical concepts with hands-on
+                                        practical training, preparing students for careers in electronics,
+                                        communication, and related industries.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <!--Personal Intro-->
+                        <h3 class="mb-20">WORK EXPERIENCE</h3>
+                        <div class="timeline-container">
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <h5>Full-stack Developer LD.</h5>
+                                        <small>July 2020 - Now</small>
+                                        <p><strong>Aatoon Software Solutions</strong></p>
+                                        <p>End-to-end development of scalable web applications, overseeing project
+                                            planning, design, and deployment for cross-functional teams</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="timeline-card">
+                                        <h5>Programme Analyst</h5>
+                                        <small>April 2017 - July 2020</small>
+                                        <p><strong>AstreQ Software Solutions</strong></p>
+                                        <p>Played a key role in the design and development of complex e-commerce
+                                            websites and applications, ensuring scalability, performance, and a seamless
+                                            user experience.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <!--Personal Intro-->
+                        <h3 class="mb-20">MY EXPERTISE</h3>
+                        <section class="skills-grid-section">
+
+                            <div class="skills-grid-container">
+                                <div class="grid-item">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                        alt="Python Logo">
+                                    <h3>Python</h3>
+                                    <p>Skilled in building robust applications with Python, including automation, data
+                                        analysis, and machine learning.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg"
+                                        alt="Django Logo">
+                                    <h3>Django</h3>
+                                    <p>Experienced in developing secure, scalable web applications using the Django
+                                        framework.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="./img/laravel-svgrepo-com.svg" alt="Laravel Logo">
+                                    <h3>Laravel</h3>
+                                    <p>Proficient in building modern, full-featured web applications using the Laravel
+                                        PHP framework.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="./img/codeigniter-svgrepo-com.svg" alt="CodeIgniter Logo">
+                                    <h3>CodeIgniter</h3>
+                                    <p>Skilled in rapid application development with the lightweight CodeIgniter
+                                        framework for PHP.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="./img/wordpress-color-svgrepo-com.svg" alt="WordPress Logo">
+                                    <h3>WordPress</h3>
+                                    <p>Extensive experience in developing custom WordPress themes and plugins for
+                                        diverse projects.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="./img/angular-svgrepo-com.svg" alt="Angular Logo">
+                                    <h3>Angular</h3>
+                                    <p>Expert in building dynamic, single-page applications (SPAs) using Angular for the
+                                        frontend.</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                        alt="React Logo">
+                                    <h3>React</h3>
+                                    <p>Proficient in developing interactive, user-friendly applications with React.js.
+                                    </p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="./img/git-svgrepo-com.svg" alt="Git Logo">
+                                    <h3>Git</h3>
+                                    <p>Experienced in using Git for version control and collaborating with teams on
+                                        large projects.</p>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <!--Personal Intro-->
+                        <h3 class="mb-20">MY AWARDS & ACHIEVEMENTS</h3>
+                        <section class="awards-container">
+
+
+
+
+
+                            <div class="award-card">
+                                <div class="award-icon">🎖️</div>
+                                <div class="award-content">
+                                    <h2>Budding Performer</h2>
+                                    <p class="award-organization">Aatoon Software Solutions</p>
+                                    <p class="award-year">2022</p>
+                                    <p class="award-details">
+                                        Recognized for demonstrating exceptional potential, dedication, and performance
+                                        in the early stages of my career. This award highlights my ability to adapt
+                                        quickly, deliver impactful results, and showcase a strong commitment to
+                                        excellence and growth.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="award-card">
+                                <div class="award-icon">🎖️</div>
+                                <div class="award-content">
+                                    <h2>Budding Performer</h2>
+                                    <p class="award-organization">Aatoon Software Solutions</p>
+                                    <p class="award-year">2021</p>
+                                    <p class="award-details">
+                                        Awarded for outstanding performance and potential early in my career, reflecting
+                                        my ability to quickly adapt, contribute effectively, and showcase significant
+                                        promise in my field. This recognition acknowledges my dedication to continuous
+                                        improvement and my drive for excellence.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-temp pf" id="portfolio-template" style="display: none;">
+        <div class="container about-section pf-page">
+            <div class="section-container">
+                <div class="page-heading">
+                    <span class="icon"><img src="./img/albin.0bd9326f8fbc8520729a 1.png" /></span>
+                    <h2>PORTFOLIO</h2>
+                </div>
+                <div class="row">
+                    <section class="projects-container">
+                        <!-- Project Item 1 -->
+                        <div class="project-item" data-project="project1" onclick="openModal(this)">
+                            <img src="./img/education-collage-concept.2baf0cd182f71c3f336b.jpg" alt="Project 1"
+                                class="project-image">
+                            <h3>Campus Management System</h3>
+                        </div>
+
+                        <!-- Project Item 2 -->
+                        <div class="project-item" data-project="project2" onclick="openModal(this)">
+                            <img src="./img/hire.1f3f15705538240bb5ee.jpg" alt="Project 2" class="project-image">
+                            <h3>Hiring & Job Portal</h3>
+                        </div>
+
+                        <!-- Project Item 3 -->
+                        <div class="project-item" data-project="project3" onclick="openModal(this)">
+                            <img src="./img/payment.38844e69f091a6471703.jpg" alt="Project 3" class="project-image">
+                            <h3>Pay Later System</h3>
+                        </div>
+
+                        <div class="project-item" data-project="project4" onclick="openModal(this)">
+                            <img src="./img/automotive.9bedbd89948862642477.jpeg" alt="Project 3" class="project-image">
+                            <h3>Automotive Claim & Service Booking System</h3>
+                        </div>
+
+                        <div class="project-item" data-project="project5" onclick="openModal(this)">
+                            <img src="./img/e-learn.d1e5fed43756548ce07d.jpeg" alt="Project 3" class="project-image">
+                            <h3>E-Learning Application</h3>
+                        </div>
+                        <div class="project-item" data-project="project6" onclick="openModal(this)">
+                            <img src="./img/e-commerce.e8d2d63f66a98c279da2.jpeg" alt="Project 3" class="project-image">
+                            <h3>E-Commerce</h3>
+                        </div>
+
+
+                    </section>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!--Personal Intro-->
+                        <h3 class="mb-20">REFERENCES</h3>
+                        <section class="client-logos">
+
+                            <div class="logo-slider">
+                                <div class="slider-item">
+                                    <a href="https://xseedacademy.com." target="_blank">
+                                        <img src="./img/client/xseed-logo.png" alt="Client 1">
+                                    </a>
+                                </div>
+                                <div class="slider-item">
+                                    <a href="https://ziphire.hr" target="_blank">
+                                        <img src="./img/client/ZipHire-logo.png" alt="Client 2">
+                                    </a>
+                                </div>
+                                <div class="slider-item">
+                                    <a href="https://nroutesinternational.com/" target="_blank">
+                                        <img src="./img/client/nroutes.png" alt="Client 3">
+                                    </a>
+                                </div>
+                                <div class="slider-item">
+                                    <a href="https://www.sainoryukarate.com/" target="_blank">
+                                        <img src="./img/client/sainoryu-karate-academy.png" alt="Client 4">
+                                    </a>
+                                </div>
+                                <div class="slider-item">
+                                    <a href="https://xseed.com.au/" target="_blank">
+                                        <img src="./img/client/xseed-hsc-logo.png" alt="Client 4">
+                                    </a>
+                                </div>
+                                <div class="slider-item">
+                                    <a href="https://jabusinessworld.com/" target="_blank">
+                                        <img src="./img/client/ja-group.png" alt="Client 4">
+                                    </a>
+                                </div>
+                                <!-- Add more logos here -->
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contact-us-temp" id="contact-template" style="display: none;">
+        <div class="container about-section pf-page">
+            <div class="section-container">
+                <div class="page-heading">
+                    <span class="icon"><img src="./img/albin.0bd9326f8fbc8520729a 1.png" /></span>
+                    <h2>CONTACT US</h2>
+                </div>
+                <div class="row">
+                    <section class="contact-section">
+                        <div class="container">
+                         
+                          <p class="contact-description">
+                            We're here to help! Reach out to us using the information below and let us assist you with your needs.
+                          </p>
+                    
+                          <div class="contact-details">
+                            <div class="detail-item">
+                              <div class="icon">📍</div>
+                              <div>
+                                <h3>Our Address</h3>
+                                <p>Vavelikunnel House,Kaloor P.O, Kalloorkad, Pin: 686668</p>
+                              </div>
+                            </div>
+                    
+                            <div class="detail-item">
+                              <div class="icon">📞</div>
+                              <div>
+                                <h3>Call Us</h3>
+                                <p><a href="tel:+91 9633321929">+91 9633321929</a></p>
+                              </div>
+                            </div>
+                    
+                            <div class="detail-item">
+                              <div class="icon">📧</div>
+                              <div>
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:albinvthomas321@gmail.com">albinvthomas321@gmail.com</a></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Custom Modal -->
+        <div class="custom-modal" id="customModal-popup">
+            <div class="modal-content">
+                <span class="close-btn" id="closeBtn" onclick="buttonClick()">&times;</span>
+                <h2 id="modalTitle">Project Title</h2>
+                <p id="modalDescription">Project Description goes here...</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            function buttonClick() {
+                const modal = document.getElementById('customModal-popup');
+                modal.style.display = 'none';
+            }
+            function openModal(xthis) {
+                const projectData = {
+                    project1: {
+                        title: 'Project 1',
+                        description: "The Campus Management System is an integrated software solution designed to streamline the administrative and academic operations of educational institutions. It offers modules for managing student information, course registrations, attendance, grading, scheduling, and faculty management. The system enhances communication between students, faculty, and staff, and provides real-time data analytics to improve decision-making. With features such as automated notifications, report generation, and secure data storage, the Campus Management System helps educational institutions improve efficiency, reduce manual work, and create a seamless campus experience.",
+                        project_name: "Campus Management System",
+
+                    },
+                    project2: {
+                        title: 'Project 2',
+                        description: 'The Hiring and Job Portal is an advanced platform designed to connect job seekers with employers efficiently. It features an intuitive interface where candidates can upload their resumes, and employers can post job listings. Leveraging the power of OpenAI, the portal uses intelligent resume matching algorithms to automatically analyze resumes and match candidates with the most relevant job opportunities based on skills, experience, and qualifications. The AI-driven system enhances accuracy, saves time, and ensures that job seekers are presented with the best opportunities, while employers receive highly qualified candidates for their openings. The portal also offers features like real-time application tracking, interview scheduling, and advanced search filters to improve the hiring process for both candidates and employers.',
+                        project_name: "Hiring & Job Portal",
+                    },
+                    project3: {
+                        title: 'Project 3',
+                        description: 'The Pay Later System is a flexible and convenient payment solution that allows customers to make purchases and defer payment to a later date. This system empowers shoppers with the option to buy products or services now and pay for them in installments or after a specified period. With seamless integration into e-commerce platforms and point-of-sale systems, it provides users with a hassle-free way to manage their finances without the burden of immediate full payment. The system offers transparent terms, flexible payment plans, and low-interest rates, ensuring a positive user experience. Additionally, it provides merchants with a secure, efficient way to increase sales by catering to a broader range of customers who may prefer deferred payment options.',
+                        project_name: "Pay Later System",
+                    },
+                    project4: {
+                        title: 'Project 4',
+                        description: 'The Automotive Claim & Service Booking System is a comprehensive platform developed to streamline the process of insurance claims and service bookings for automotive customers. This system enables users to easily submit and track insurance claims for accidents or damages, while also providing a seamless interface to schedule vehicle services such as repairs, maintenance, and inspections at authorized service centers. Through automation, the platform reduces the paperwork and complexity typically associated with claims processing and service scheduling. Features include real-time claim tracking, secure document uploads, service appointment reminders, and integration with service center management. This project demonstrates my ability to design and implement user-friendly systems that enhance customer experience and improve operational efficiency in the automotive industry.',
+                        project_name: "Automotive Claim & Service Booking System",
+                    },
+                    project5: {
+                        title: 'Project 5',
+                        description: 'The E-Learning Application is an interactive educational platform designed to provide a comprehensive learning experience for users. It includes features for taking tests, practicing skills, and enhancing listening comprehension, offering a wide range of study materials across various subjects. The test-taking functionality allows users to attempt quizzes and exams, track their progress, and receive instant feedback. The practice portal offers interactive exercises, enabling users to strengthen their understanding of key concepts through repeated practice. Additionally, the listening portal helps learners improve their listening skills with audio-based lessons and assessments. With a user-friendly interface and responsive design, this application aims to create an engaging and effective learning environment, whether for academic or professional development.',
+                        project_name: "E-Learning Application",
+                    },
+                    project6: {
+                        title: 'Project 6',
+                        description: 'I have developed a range of e-commerce applications using WordPress, utilizing its powerful features and flexibility to create tailored solutions for different business needs. These e-commerce websites include a variety of functionalities such as product catalogs, shopping carts, secure payment gateways, and customer management. I have worked on projects involving different types of e-commerce models, including B2B, B2C, subscription-based services, and digital product sales. By leveraging WordPress plugins like WooCommerce, I have customized each platform to meet specific client requirements, from intuitive product browsing to integrated shipping and tax calculators. My expertise in WordPress allows me to deliver responsive, scalable, and user-friendly e-commerce sites that provide an excellent shopping experience for customers while ensuring smooth backend management for business owners.',
+                        project_name: "E-Commerce",
+                    }
+                };
+
+
+                const selectedProject = projectData[xthis.dataset.project];
+                const modalTitle = document.getElementById('modalTitle');
+                const modalDescription = document.getElementById('modalDescription');
+                modalTitle.textContent = selectedProject.project_name;
+                modalDescription.textContent = selectedProject.description;
+                const modal = document.getElementById('customModal-popup');
+                modal.style.display = 'flex';
+
+
+
+            }
+
+            $(document).ready(function () {
+                let sliderIndex = 0;
+                const sliderItems = $('.slider-item');
+                const totalItems = sliderItems.length;
+
+                function moveSlider() {
+                    if (sliderIndex >= totalItems) {
+                        sliderIndex = 0; // Reset to the first item
+                    }
+                    $('.logo-slider').css('transform', `translateX(-${sliderIndex * 180}px)`);
+                    sliderIndex++;
+                }
+
+                setInterval(moveSlider, 2000); // Move the slider every 2 seconds
+            });
+        </script>
+</body>
+
+</html>
