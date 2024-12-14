@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Dock Menu with Toolbar</title>
+    <meta name="description"
+        content="Showcase of my GitHub portfolio projects including web development, mobile apps, and open-source contributions. Explore my skills, achievements, and experience.">
+    <meta name="keywords"
+        content="GitHub portfolio, web developer, open-source projects, software developer, portfolio website, GitHub projects, Angular developer, React developer, Laravel developer, Node.js developer, PHP developer, Python developer">
+    <meta name="author" content="Albin Thomas">
+    <meta name="robots" content="index, follow">
+    <title>Albin Thomas-Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
@@ -450,121 +456,122 @@
                 <div class="row">
                     <section class="contact-section">
                         <div class="container">
-                         
-                          <p class="contact-description">
-                            We're here to help! Reach out to us using the information below and let us assist you with your needs.
-                          </p>
-                    
-                          <div class="contact-details">
-                            <div class="detail-item">
-                              <div class="icon">📍</div>
-                              <div>
-                                <h3>Our Address</h3>
-                                <p>Vavelikunnel House,Kaloor P.O, Kalloorkad, Pin: 686668</p>
-                              </div>
+
+                            <p class="contact-description">
+                                We're here to help! Reach out to us using the information below and let us assist you
+                                with your needs.
+                            </p>
+
+                            <div class="contact-details">
+                                <div class="detail-item">
+                                    <div class="icon">📍</div>
+                                    <div>
+                                        <h3>Our Address</h3>
+                                        <p>Vavelikunnel House,Kaloor P.O, Kalloorkad, Pin: 686668</p>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="icon">📞</div>
+                                    <div>
+                                        <h3>Call Us</h3>
+                                        <p><a href="tel:+91 9633321929">+91 9633321929</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="detail-item">
+                                    <div class="icon">📧</div>
+                                    <div>
+                                        <h3>Email Us</h3>
+                                        <p><a href="mailto:albinvthomas321@gmail.com">albinvthomas321@gmail.com</a></p>
+                                    </div>
+                                </div>
                             </div>
-                    
-                            <div class="detail-item">
-                              <div class="icon">📞</div>
-                              <div>
-                                <h3>Call Us</h3>
-                                <p><a href="tel:+91 9633321929">+91 9633321929</a></p>
-                              </div>
-                            </div>
-                    
-                            <div class="detail-item">
-                              <div class="icon">📧</div>
-                              <div>
-                                <h3>Email Us</h3>
-                                <p><a href="mailto:albinvthomas321@gmail.com">albinvthomas321@gmail.com</a></p>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                      </section>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- Custom Modal -->
-        <div class="custom-modal" id="customModal-popup">
-            <div class="modal-content">
-                <span class="close-btn" id="closeBtn" onclick="buttonClick()">&times;</span>
-                <h2 id="modalTitle">Project Title</h2>
-                <p id="modalDescription">Project Description goes here...</p>
-            </div>
+    <!-- Custom Modal -->
+    <div class="custom-modal" id="customModal-popup">
+        <div class="modal-content">
+            <span class="close-btn" id="closeBtn" onclick="buttonClick()">&times;</span>
+            <h2 id="modalTitle">Project Title</h2>
+            <p id="modalDescription">Project Description goes here...</p>
         </div>
-        <script type="text/javascript">
+    </div>
+    <script type="text/javascript">
 
-            function buttonClick() {
-                const modal = document.getElementById('customModal-popup');
-                modal.style.display = 'none';
-            }
-            function openModal(xthis) {
-                const projectData = {
-                    project1: {
-                        title: 'Project 1',
-                        description: "The Campus Management System is an integrated software solution designed to streamline the administrative and academic operations of educational institutions. It offers modules for managing student information, course registrations, attendance, grading, scheduling, and faculty management. The system enhances communication between students, faculty, and staff, and provides real-time data analytics to improve decision-making. With features such as automated notifications, report generation, and secure data storage, the Campus Management System helps educational institutions improve efficiency, reduce manual work, and create a seamless campus experience.",
-                        project_name: "Campus Management System",
+        function buttonClick() {
+            const modal = document.getElementById('customModal-popup');
+            modal.style.display = 'none';
+        }
+        function openModal(xthis) {
+            const projectData = {
+                project1: {
+                    title: 'Project 1',
+                    description: "The Campus Management System is an integrated software solution designed to streamline the administrative and academic operations of educational institutions. It offers modules for managing student information, course registrations, attendance, grading, scheduling, and faculty management. The system enhances communication between students, faculty, and staff, and provides real-time data analytics to improve decision-making. With features such as automated notifications, report generation, and secure data storage, the Campus Management System helps educational institutions improve efficiency, reduce manual work, and create a seamless campus experience.",
+                    project_name: "Campus Management System",
 
-                    },
-                    project2: {
-                        title: 'Project 2',
-                        description: 'The Hiring and Job Portal is an advanced platform designed to connect job seekers with employers efficiently. It features an intuitive interface where candidates can upload their resumes, and employers can post job listings. Leveraging the power of OpenAI, the portal uses intelligent resume matching algorithms to automatically analyze resumes and match candidates with the most relevant job opportunities based on skills, experience, and qualifications. The AI-driven system enhances accuracy, saves time, and ensures that job seekers are presented with the best opportunities, while employers receive highly qualified candidates for their openings. The portal also offers features like real-time application tracking, interview scheduling, and advanced search filters to improve the hiring process for both candidates and employers.',
-                        project_name: "Hiring & Job Portal",
-                    },
-                    project3: {
-                        title: 'Project 3',
-                        description: 'The Pay Later System is a flexible and convenient payment solution that allows customers to make purchases and defer payment to a later date. This system empowers shoppers with the option to buy products or services now and pay for them in installments or after a specified period. With seamless integration into e-commerce platforms and point-of-sale systems, it provides users with a hassle-free way to manage their finances without the burden of immediate full payment. The system offers transparent terms, flexible payment plans, and low-interest rates, ensuring a positive user experience. Additionally, it provides merchants with a secure, efficient way to increase sales by catering to a broader range of customers who may prefer deferred payment options.',
-                        project_name: "Pay Later System",
-                    },
-                    project4: {
-                        title: 'Project 4',
-                        description: 'The Automotive Claim & Service Booking System is a comprehensive platform developed to streamline the process of insurance claims and service bookings for automotive customers. This system enables users to easily submit and track insurance claims for accidents or damages, while also providing a seamless interface to schedule vehicle services such as repairs, maintenance, and inspections at authorized service centers. Through automation, the platform reduces the paperwork and complexity typically associated with claims processing and service scheduling. Features include real-time claim tracking, secure document uploads, service appointment reminders, and integration with service center management. This project demonstrates my ability to design and implement user-friendly systems that enhance customer experience and improve operational efficiency in the automotive industry.',
-                        project_name: "Automotive Claim & Service Booking System",
-                    },
-                    project5: {
-                        title: 'Project 5',
-                        description: 'The E-Learning Application is an interactive educational platform designed to provide a comprehensive learning experience for users. It includes features for taking tests, practicing skills, and enhancing listening comprehension, offering a wide range of study materials across various subjects. The test-taking functionality allows users to attempt quizzes and exams, track their progress, and receive instant feedback. The practice portal offers interactive exercises, enabling users to strengthen their understanding of key concepts through repeated practice. Additionally, the listening portal helps learners improve their listening skills with audio-based lessons and assessments. With a user-friendly interface and responsive design, this application aims to create an engaging and effective learning environment, whether for academic or professional development.',
-                        project_name: "E-Learning Application",
-                    },
-                    project6: {
-                        title: 'Project 6',
-                        description: 'I have developed a range of e-commerce applications using WordPress, utilizing its powerful features and flexibility to create tailored solutions for different business needs. These e-commerce websites include a variety of functionalities such as product catalogs, shopping carts, secure payment gateways, and customer management. I have worked on projects involving different types of e-commerce models, including B2B, B2C, subscription-based services, and digital product sales. By leveraging WordPress plugins like WooCommerce, I have customized each platform to meet specific client requirements, from intuitive product browsing to integrated shipping and tax calculators. My expertise in WordPress allows me to deliver responsive, scalable, and user-friendly e-commerce sites that provide an excellent shopping experience for customers while ensuring smooth backend management for business owners.',
-                        project_name: "E-Commerce",
-                    }
-                };
-
-
-                const selectedProject = projectData[xthis.dataset.project];
-                const modalTitle = document.getElementById('modalTitle');
-                const modalDescription = document.getElementById('modalDescription');
-                modalTitle.textContent = selectedProject.project_name;
-                modalDescription.textContent = selectedProject.description;
-                const modal = document.getElementById('customModal-popup');
-                modal.style.display = 'flex';
+                },
+                project2: {
+                    title: 'Project 2',
+                    description: 'The Hiring and Job Portal is an advanced platform designed to connect job seekers with employers efficiently. It features an intuitive interface where candidates can upload their resumes, and employers can post job listings. Leveraging the power of OpenAI, the portal uses intelligent resume matching algorithms to automatically analyze resumes and match candidates with the most relevant job opportunities based on skills, experience, and qualifications. The AI-driven system enhances accuracy, saves time, and ensures that job seekers are presented with the best opportunities, while employers receive highly qualified candidates for their openings. The portal also offers features like real-time application tracking, interview scheduling, and advanced search filters to improve the hiring process for both candidates and employers.',
+                    project_name: "Hiring & Job Portal",
+                },
+                project3: {
+                    title: 'Project 3',
+                    description: 'The Pay Later System is a flexible and convenient payment solution that allows customers to make purchases and defer payment to a later date. This system empowers shoppers with the option to buy products or services now and pay for them in installments or after a specified period. With seamless integration into e-commerce platforms and point-of-sale systems, it provides users with a hassle-free way to manage their finances without the burden of immediate full payment. The system offers transparent terms, flexible payment plans, and low-interest rates, ensuring a positive user experience. Additionally, it provides merchants with a secure, efficient way to increase sales by catering to a broader range of customers who may prefer deferred payment options.',
+                    project_name: "Pay Later System",
+                },
+                project4: {
+                    title: 'Project 4',
+                    description: 'The Automotive Claim & Service Booking System is a comprehensive platform developed to streamline the process of insurance claims and service bookings for automotive customers. This system enables users to easily submit and track insurance claims for accidents or damages, while also providing a seamless interface to schedule vehicle services such as repairs, maintenance, and inspections at authorized service centers. Through automation, the platform reduces the paperwork and complexity typically associated with claims processing and service scheduling. Features include real-time claim tracking, secure document uploads, service appointment reminders, and integration with service center management. This project demonstrates my ability to design and implement user-friendly systems that enhance customer experience and improve operational efficiency in the automotive industry.',
+                    project_name: "Automotive Claim & Service Booking System",
+                },
+                project5: {
+                    title: 'Project 5',
+                    description: 'The E-Learning Application is an interactive educational platform designed to provide a comprehensive learning experience for users. It includes features for taking tests, practicing skills, and enhancing listening comprehension, offering a wide range of study materials across various subjects. The test-taking functionality allows users to attempt quizzes and exams, track their progress, and receive instant feedback. The practice portal offers interactive exercises, enabling users to strengthen their understanding of key concepts through repeated practice. Additionally, the listening portal helps learners improve their listening skills with audio-based lessons and assessments. With a user-friendly interface and responsive design, this application aims to create an engaging and effective learning environment, whether for academic or professional development.',
+                    project_name: "E-Learning Application",
+                },
+                project6: {
+                    title: 'Project 6',
+                    description: 'I have developed a range of e-commerce applications using WordPress, utilizing its powerful features and flexibility to create tailored solutions for different business needs. These e-commerce websites include a variety of functionalities such as product catalogs, shopping carts, secure payment gateways, and customer management. I have worked on projects involving different types of e-commerce models, including B2B, B2C, subscription-based services, and digital product sales. By leveraging WordPress plugins like WooCommerce, I have customized each platform to meet specific client requirements, from intuitive product browsing to integrated shipping and tax calculators. My expertise in WordPress allows me to deliver responsive, scalable, and user-friendly e-commerce sites that provide an excellent shopping experience for customers while ensuring smooth backend management for business owners.',
+                    project_name: "E-Commerce",
+                }
+            };
 
 
+            const selectedProject = projectData[xthis.dataset.project];
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            modalTitle.textContent = selectedProject.project_name;
+            modalDescription.textContent = selectedProject.description;
+            const modal = document.getElementById('customModal-popup');
+            modal.style.display = 'flex';
 
-            }
 
-            // $(document).ready(function () {
-            //     let sliderIndex = 0;
-            //     const sliderItems = $('.slider-item');
-            //     const totalItems = sliderItems.length;
 
-            //     function moveSlider() {
-            //         if (sliderIndex >= totalItems) {
-            //             sliderIndex = 0; // Reset to the first item
-            //         }
-            //         $('.logo-slider').css('transform', `translateX(-${sliderIndex * 180}px)`);
-            //         sliderIndex++;
-            //     }
+        }
 
-            //     setInterval(moveSlider, 2000); // Move the slider every 2 seconds
-            // });
-        </script>
+        // $(document).ready(function () {
+        //     let sliderIndex = 0;
+        //     const sliderItems = $('.slider-item');
+        //     const totalItems = sliderItems.length;
+
+        //     function moveSlider() {
+        //         if (sliderIndex >= totalItems) {
+        //             sliderIndex = 0; // Reset to the first item
+        //         }
+        //         $('.logo-slider').css('transform', `translateX(-${sliderIndex * 180}px)`);
+        //         sliderIndex++;
+        //     }
+
+        //     setInterval(moveSlider, 2000); // Move the slider every 2 seconds
+        // });
+    </script>
 </body>
 
 </html>
