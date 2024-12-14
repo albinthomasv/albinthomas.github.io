@@ -391,9 +391,9 @@
                     </section>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-8">
-                        <!--Personal Intro-->
+                        
                         <h3 class="mb-20">REFERENCES</h3>
                         <section class="client-logos">
 
@@ -428,12 +428,12 @@
                                         <img src="./img/client/ja-group.png" alt="Client 4">
                                     </a>
                                 </div>
-                                <!-- Add more logos here -->
+                                
                             </div>
                         </section>
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -549,21 +549,21 @@
 
             }
 
-            $(document).ready(function () {
-                let sliderIndex = 0;
-                const sliderItems = $('.slider-item');
-                const totalItems = sliderItems.length;
+            // $(document).ready(function () {
+            //     let sliderIndex = 0;
+            //     const sliderItems = $('.slider-item');
+            //     const totalItems = sliderItems.length;
 
-                function moveSlider() {
-                    if (sliderIndex >= totalItems) {
-                        sliderIndex = 0; // Reset to the first item
-                    }
-                    $('.logo-slider').css('transform', `translateX(-${sliderIndex * 180}px)`);
-                    sliderIndex++;
-                }
+            //     function moveSlider() {
+            //         if (sliderIndex >= totalItems) {
+            //             sliderIndex = 0; // Reset to the first item
+            //         }
+            //         $('.logo-slider').css('transform', `translateX(-${sliderIndex * 180}px)`);
+            //         sliderIndex++;
+            //     }
 
-                setInterval(moveSlider, 2000); // Move the slider every 2 seconds
-            });
+            //     setInterval(moveSlider, 2000); // Move the slider every 2 seconds
+            // });
         </script>
 </body>
 
