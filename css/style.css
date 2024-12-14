@@ -765,7 +765,7 @@ button.minimize-button {
     }
     .dock-container {
         position: fixed;
-        bottom: 55px;
+        bottom: 65px;
         width: 90%;
         max-width: 400px;
         display: flex;
