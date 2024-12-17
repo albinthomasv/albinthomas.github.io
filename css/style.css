@@ -3,16 +3,30 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    background: linear-gradient(to bottom, #ff4095, #0c2527);
+    background: linear-gradient(to bottom, rgb(157 15 78 / 70%), rgba(12, 37, 39, 0.7)), url(../img/5440162.jpg);
+    background-size: cover;
+    /* Make sure the image covers the container */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
     color: #fff;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: drop-shadow(2px 4px 6px black);
+    animation: zoomInOut 10s infinite alternate;
 }
 
+@keyframes zoomInOut {
+    0% {
+        background-size: 100%;
+    }
 
+    100% {
+        background-size: 120%;
+    }
+}
 
 .page {
     position: fixed;
@@ -185,7 +199,7 @@ button.minimize-button {
     padding-top: 15px;
     font-family: "Poppins", sans-serif;
     /* text-shadow: 1px 2px #000000d4; */
-   
+
 }
 
 .page-heading .icon {
@@ -201,20 +215,24 @@ button.minimize-button {
     border-radius: 50px;
     margin-right: -20px;
 }
+
 .about-section h3,
 .about-section p {
     font-family: "Poppins", sans-serif;
-   
+
 }
-.about-section h3{
+
+.about-section h3 {
     display: flex;
-   justify-content: start;
-   color: #4a92ff;
-   
+    justify-content: start;
+    color: #4a92ff;
+
 }
+
 .about-section p {
     font-size: 16px;
 }
+
 /* Education Timeline */
 .education-timeline {
     max-width: 900px;
@@ -224,20 +242,20 @@ button.minimize-button {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-  }
-  
-  .education-item {
+}
+
+.education-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: 30px;
     position: relative;
-  }
-  
-  .education-item:last-child {
+}
+
+.education-item:last-child {
     margin-bottom: 0;
-  }
-  
-  .circle {
+}
+
+.circle {
     width: 16px;
     height: 16px;
     background: #ff1681;
@@ -245,9 +263,9 @@ button.minimize-button {
     margin-right: 20px;
     flex-shrink: 0;
     position: relative;
-  }
-  
-  .education-item::after {
+}
+
+.education-item::after {
     content: '';
     position: absolute;
     top: 0;
@@ -255,99 +273,101 @@ button.minimize-button {
     height: 100%;
     width: 2px;
     background: #ff1681;
-  }
-  
-  .education-item:last-child::after {
+}
+
+.education-item:last-child::after {
     display: none;
-  }
-  
-  .content {
+}
+
+.content {
     flex-grow: 1;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
     color: #333;
-  }
-  
-  .institution {
+}
+
+.institution {
     font-size: 16px;
     color: #555;
     margin-bottom: 5px;
     font-weight: 500;
-  }
-  
-  .duration {
+}
+
+.duration {
     font-size: 14px;
     color: #999;
     margin-bottom: 10px;
-  }
-  
-  .details {
+}
+
+.details {
     font-size: 14px;
     color: #666;
     margin-top: 5px;
     line-height: 1.8;
-  }
-  /* Awards Section */
+}
+
+/* Awards Section */
 .awards-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .award-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .award-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 .award-icon {
-  font-size: 40px;
-  color: #007bff;
-  margin-right: 20px;
-  flex-shrink: 0;
+    font-size: 40px;
+    color: #007bff;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 
 .award-content h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 8px;
-  color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #333;
 }
 
 .award-organization {
-  font-size: 16px;
-  font-weight: 500;
-  color: #555;
-  margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin: 0 0 4px;
 }
 
 .award-year {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 10px;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
 }
 
 .award-details {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
 }
+
 /* Timeline */
 
 .timeline-container {
@@ -441,13 +461,14 @@ button.minimize-button {
     transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
+
 /* Grid Section Styles */
 .skills-grid-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-  
+
 }
 
 .skills-grid-container {
@@ -481,7 +502,7 @@ button.minimize-button {
     display: flex;
     justify-content: center;
     color: #000;
-    text-shadow: 1px 2px #00000000!important;
+    text-shadow: 1px 2px #00000000 !important;
 }
 
 .grid-item p {
@@ -517,6 +538,7 @@ button.minimize-button {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .timeline::before {
         left: 10%;
@@ -541,9 +563,9 @@ button.minimize-button {
     gap: 30px;
     padding: 40px 20px;
     justify-content: center;
-  }
-  
-  .project-item {
+}
+
+.project-item {
     background: white;
     border-radius: 10px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -551,38 +573,39 @@ button.minimize-button {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s ease-in-out;
-  }
-  .project-item h3{
+}
+
+.project-item h3 {
     display: flex;
     justify-content: center;
     color: #000;
     font-weight: 500;
-  }
-  
-  .project-item:hover {
+}
+
+.project-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .project-image {
+}
+
+.project-image {
     width: 100%;
     border-radius: 10px;
     height: auto;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-item:hover .project-image {
+}
+
+.project-item:hover .project-image {
     transform: scale(1.05);
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 18px;
     margin-top: 15px;
     font-weight: bold;
-  }
-  
-  /* Custom Modal Styles */
-  .custom-modal {
+}
+
+/* Custom Modal Styles */
+.custom-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -594,14 +617,19 @@ button.minimize-button {
     align-items: center;
     z-index: 1000;
     animation: fadeIn 0.3s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  .modal-content {
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal-content {
     background: white;
     padding: 40px;
     border-radius: 12px;
@@ -610,21 +638,21 @@ button.minimize-button {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-  }
-  
-  #modalTitle {
+}
+
+#modalTitle {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
-  }
-  
-  #modalDescription {
+}
+
+#modalDescription {
     font-size: 16px;
     color: #555;
     line-height: 1.6;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -635,112 +663,113 @@ button.minimize-button {
     background: transparent;
     border: none;
     transition: color 0.3s ease-in-out;
-  }
-  
-  .close-btn:hover {
+}
+
+.close-btn:hover {
     color: #007bff;
-  }
-  .client-logos {
+}
+
+.client-logos {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-  }
-  
-  .logo-slider {
+}
+
+.logo-slider {
     display: flex;
     overflow: hidden;
     width: 80%;
     justify-content: flex-start;
     gap: 30px;
-  }
-  
-  .slider-item {
+}
+
+.slider-item {
     flex: 0 0 auto;
     transition: transform 0.5s ease;
-  }
-  
-  .slider-item img {
+}
+
+.slider-item img {
     max-width: 150px;
     height: auto;
     transition: transform 0.3s ease;
-  }
-  
-  .slider-item:hover img {
-    transform: scale(1.1);
-  }
+}
 
-  /* Contact Section */
+.slider-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
 .contact-section h2 {
     font-size: 32px;
     color: #333333;
     margin-bottom: 10px;
-  }
-  
-  .contact-description {
+}
+
+.contact-description {
     font-size: 16px;
     color: #666666;
     margin-bottom: 30px;
     line-height: 1.5;
-  }
-  
-  /* Contact Details */
-  .contact-details {
+}
+
+/* Contact Details */
+.contact-details {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     text-align: left;
-  }
-  
-  .detail-item {
+}
+
+.detail-item {
     display: flex;
     align-items: center;
     padding: 15px;
     background-color: #f4f4f4;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .detail-item:hover {
+}
+
+.detail-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .icon {
+}
+
+.icon {
     font-size: 24px;
     color: #007bff;
     margin-right: 15px;
-  }
-  
-  .detail-item h3 {
+}
+
+.detail-item h3 {
     font-size: 18px;
     color: #333333;
     margin-bottom: 5px;
-  }
-  
-  .detail-item p {
+}
+
+.detail-item p {
     font-size: 14px;
     color: #555555;
     margin: 0;
-  }
-  
-  .detail-item a {
+}
+
+.detail-item a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  
-  .detail-item a:hover {
+}
+
+.detail-item a:hover {
     color: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (min-width: 768px) {
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
     .contact-details {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
-  }
-  
+}
+
 .cd-headline {
     font-size: 3rem;
     line-height: 1.2;
@@ -763,6 +792,7 @@ button.minimize-button {
         text-shadow: 1px 2px #333;
         height: 100px;
     }
+
     .dock-container {
         position: fixed;
         bottom: 65px;
@@ -784,7 +814,7 @@ button.minimize-button {
     .cd-headline {
         font-size: 2rem;
         font-weight: 300;
-        
+
     }
 }
 
