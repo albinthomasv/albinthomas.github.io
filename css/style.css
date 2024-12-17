@@ -20,11 +20,30 @@ body {
 
 @keyframes zoomInOut {
     0% {
-        background-size: 100%;
+        background-size: 100% 100%;
     }
 
     100% {
-        background-size: 120%;
+        background-size: 120% 120%;
+    }
+}
+
+/* Mobile Responsive Adjustment */
+@media (max-width: 768px) {
+    body {
+        background-size: 100% 100%;
+        /* Keep background-size at 100% on smaller screens */
+    }
+
+    @keyframes zoomInOut {
+        0% {
+            background-size: 100% 100%;
+        }
+
+        100% {
+            background-size: 110% 110%;
+            /* Slight zoom effect for mobile */
+        }
     }
 }
 
@@ -554,6 +573,8 @@ h2 {
         margin-left: 3rem;
         margin-right: 0;
     }
+
+
 }
 
 /* Projects Container */
