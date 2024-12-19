@@ -61,6 +61,12 @@
         function openPage(item) {
 
             let page = document.querySelector('.page');
+            if(item.label=='About Me'){
+               setTimeout(() => {
+                toggleTab(); 
+               },1000);
+                
+            }
             if (!page && item.label != 'Home') {
                 page = document.createElement('div');
                 page.classList.add('page');
@@ -240,67 +246,100 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-8">
-                        <!--Personal Intro-->
-                        <h3 class="mb-20">MY EXPERTISE</h3>
-                        <section class="skills-grid-section">
+                        <!-- Include Tab and Grid Code -->
+                        <h3 class="mb-20 mb-5">MY EXPERTISE</h3>
+                        <!-- Tab Buttons -->
+                        <div class="tabs">
+                            <button class="tab active" data-category="all">All</button>
+                            <button class="tab" data-category="php">PHP</button>
+                            <button class="tab" data-category="python">Python</button>
+                            <button class="tab" data-category="javascript">JavaScript</button>
+                            <button class="tab" data-category="database">Database</button>
+                            <button class="tab" data-category="design">UI/UX Tool</button>
+                            <button class="tab" data-category="other">Other</button>
+                        </div>
 
-                            <div class="skills-grid-container">
-                                <div class="grid-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-                                        alt="Python Logo">
-                                    <h3>Python</h3>
-                                    <p>Skilled in building robust applications with Python, including automation, data
-                                        analysis, and machine learning.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg"
-                                        alt="Django Logo">
-                                    <h3>Django</h3>
-                                    <p>Experienced in developing secure, scalable web applications using the Django
-                                        framework.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="./img/laravel-svgrepo-com.svg" alt="Laravel Logo">
-                                    <h3>Laravel</h3>
-                                    <p>Proficient in building modern, full-featured web applications using the Laravel
-                                        PHP framework.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="./img/codeigniter-svgrepo-com.svg" alt="CodeIgniter Logo">
-                                    <h3>CodeIgniter</h3>
-                                    <p>Skilled in rapid application development with the lightweight CodeIgniter
-                                        framework for PHP.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="./img/wordpress-color-svgrepo-com.svg" alt="WordPress Logo">
-                                    <h3>WordPress</h3>
-                                    <p>Extensive experience in developing custom WordPress themes and plugins for
-                                        diverse projects.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="./img/angular-svgrepo-com.svg" alt="Angular Logo">
-                                    <h3>Angular</h3>
-                                    <p>Expert in building dynamic, single-page applications (SPAs) using Angular for the
-                                        frontend.</p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                                        alt="React Logo">
-                                    <h3>React</h3>
-                                    <p>Proficient in developing interactive, user-friendly applications with React.js.
-                                    </p>
-                                </div>
-                                <div class="grid-item">
-                                    <img src="./img/git-svgrepo-com.svg" alt="Git Logo">
-                                    <h3>Git</h3>
-                                    <p>Experienced in using Git for version control and collaborating with teams on
-                                        large projects.</p>
-                                </div>
+                        <!-- Skills Grid -->
+                        <div class="skills-grid-container mb-4">
+                            <!-- Python -->
+                            <div class="grid-item" data-category="python">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                    alt="Python Logo">
+                                <h4>Python</h4>
+                                <p>Skilled in building robust applications with Python, including automation, data
+                                    analysis, and machine learning.</p>
                             </div>
-                        </section>
+                            <div class="grid-item" data-category="python">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg"
+                                    alt="Django Logo">
+                                <h4>Django</h4>
+                                <p>Experienced in developing secure, scalable web applications using the Django
+                                    framework.</p>
+                            </div>
+
+                            <!-- PHP -->
+                            <div class="grid-item" data-category="php">
+                                <img src="./img/laravel-svgrepo-com.svg" alt="Laravel Logo">
+                                <h4>Laravel</h4>
+                                <p>Proficient in building modern, full-featured web applications using the Laravel PHP
+                                    framework.</p>
+                            </div>
+                            <div class="grid-item" data-category="php">
+                                <img src="./img/codeigniter-svgrepo-com.svg" alt="CodeIgniter Logo">
+                                <h4>CodeIgniter</h4>
+                                <p>Skilled in rapid application development with the lightweight CodeIgniter framework
+                                    for PHP.</p>
+                            </div>
+                            <div class="grid-item" data-category="php">
+                                <img src="./img/wordpress-color-svgrepo-com.svg" alt="Wordpress Logo">
+                                <h4>WordPress</h4>
+                                <p>Proficient in building dynamic, user-friendly websites using the WordPress CMS.</p>
+                            </div>
 
 
+                            <!-- JavaScript -->
+                            <div class="grid-item" data-category="javascript">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                    alt="React Logo">
+                                <h4>React</h4>
+                                <p>Proficient in developing interactive, user-friendly applications with React.js.</p>
+                            </div>
+                            <div class="grid-item" data-category="javascript">
+                                <img src="./img/angular-svgrepo-com.svg" alt="Angular Logo">
+                                <h4>Angular</h4>
+                                <p>Expert in building dynamic, single-page applications (SPAs) using Angular for the
+                                    frontend.</p>
+                            </div>
 
+                            <!-- Database -->
+                            <div class="grid-item" data-category="database">
+                                <img src="./img/mysql-logo-svgrepo-com.svg" alt="MySQL Logo">
+                                <h4>MySQL</h4>
+                                <p>Proficient in designing and managing databases using MySQL.</p>
+                            </div>
+                            <div class="grid-item" data-category="database">
+                                <img src="./img/postgresql-logo-svgrepo-com.svg" alt="Postgres Logo">
+                                <h4>Postgres SQL</h4>
+                                <p>Skilled in working with relational databases using PostgreSQL.</p>
+                               
+                            </div>
+
+
+                            <!-- Design -->
+                            <div class="grid-item" data-category="design">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+                                    alt="Figma Logo">
+                                <h4>Figma</h4>
+                                <p>Proficient in designing modern and interactive prototypes using Figma.</p>
+                            </div>
+
+                            <div class="grid-item" data-category="other">
+                                <img src="./img/git-svgrepo-com.svg"
+                                    alt="Git">
+                                <h4>Git</h4>
+                                <p>Proficient in version control and collaboration using Git.</p>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -364,33 +403,33 @@
                         <div class="project-item" data-project="project1" onclick="openModal(this)">
                             <img src="./img/education-collage-concept.2baf0cd182f71c3f336b.jpg" alt="Project 1"
                                 class="project-image">
-                            <h3>Campus Management System</h3>
+                            <h4>Campus Management System</h4>
                         </div>
 
                         <!-- Project Item 2 -->
                         <div class="project-item" data-project="project2" onclick="openModal(this)">
                             <img src="./img/hire.1f3f15705538240bb5ee.jpg" alt="Project 2" class="project-image">
-                            <h3>Hiring & Job Portal</h3>
+                            <h4>Hiring & Job Portal</h4>
                         </div>
 
                         <!-- Project Item 3 -->
                         <div class="project-item" data-project="project3" onclick="openModal(this)">
                             <img src="./img/payment.38844e69f091a6471703.jpg" alt="Project 3" class="project-image">
-                            <h3>Pay Later System</h3>
+                            <h4>Pay Later System</h4>
                         </div>
 
                         <div class="project-item" data-project="project4" onclick="openModal(this)">
                             <img src="./img/automotive.9bedbd89948862642477.jpeg" alt="Project 3" class="project-image">
-                            <h3>Automotive Claim & Service Booking System</h3>
+                            <h4>Automotive Claim & Service Booking System</h4>
                         </div>
 
                         <div class="project-item" data-project="project5" onclick="openModal(this)">
                             <img src="./img/e-learn.d1e5fed43756548ce07d.jpeg" alt="Project 3" class="project-image">
-                            <h3>E-Learning Application</h3>
+                            <h4>E-Learning Application</h4>
                         </div>
                         <div class="project-item" data-project="project6" onclick="openModal(this)">
                             <img src="./img/e-commerce.e8d2d63f66a98c279da2.jpeg" alt="Project 3" class="project-image">
-                            <h3>E-Commerce</h3>
+                            <h4>E-Commerce Projects</h4>
                         </div>
 
 
@@ -466,7 +505,7 @@
                                 <div class="detail-item">
                                     <div class="icon">📍</div>
                                     <div>
-                                        <h3>Our Address</h3>
+                                        <h5>Our Address</h5>
                                         <p>Vavelikunnel House,Kaloor P.O, Kalloorkad, Pin: 686668</p>
                                     </div>
                                 </div>
@@ -474,7 +513,7 @@
                                 <div class="detail-item">
                                     <div class="icon">📞</div>
                                     <div>
-                                        <h3>Call Us</h3>
+                                        <h5>Call Us</h5>
                                         <p><a href="tel:+91 9633321929">+91 9633321929</a></p>
                                     </div>
                                 </div>
@@ -482,7 +521,7 @@
                                 <div class="detail-item">
                                     <div class="icon">📧</div>
                                     <div>
-                                        <h3>Email Us</h3>
+                                        <h5>Email Us</h5>
                                         <p><a href="mailto:albinvthomas321@gmail.com">albinvthomas321@gmail.com</a></p>
                                     </div>
                                 </div>
@@ -500,6 +539,12 @@
             <span class="close-btn" id="closeBtn" onclick="buttonClick()">&times;</span>
             <h2 id="modalTitle">Project Title</h2>
             <p id="modalDescription">Project Description goes here...</p>
+            <div class="project-details d-flex flex-column">
+                <h6>Technologies:&nbsp <span id="modal_technogies"></span></h6>
+                <h6>Roles: &nbsp<span id="modal_roles"></span></h6>
+            </div>
+            
+            
         </div>
     </div>
     <script type="text/javascript">
@@ -514,32 +559,45 @@
                     title: 'Project 1',
                     description: "The Campus Management System is an integrated software solution designed to streamline the administrative and academic operations of educational institutions. It offers modules for managing student information, course registrations, attendance, grading, scheduling, and faculty management. The system enhances communication between students, faculty, and staff, and provides real-time data analytics to improve decision-making. With features such as automated notifications, report generation, and secure data storage, the Campus Management System helps educational institutions improve efficiency, reduce manual work, and create a seamless campus experience.",
                     project_name: "Campus Management System",
+                    technologies: "Python-Django,Angular",
+                    roles: "Full Stack Developer,Project coordinator",
 
                 },
                 project2: {
                     title: 'Project 2',
                     description: 'The Hiring and Job Portal is an advanced platform designed to connect job seekers with employers efficiently. It features an intuitive interface where candidates can upload their resumes, and employers can post job listings. Leveraging the power of OpenAI, the portal uses intelligent resume matching algorithms to automatically analyze resumes and match candidates with the most relevant job opportunities based on skills, experience, and qualifications. The AI-driven system enhances accuracy, saves time, and ensures that job seekers are presented with the best opportunities, while employers receive highly qualified candidates for their openings. The portal also offers features like real-time application tracking, interview scheduling, and advanced search filters to improve the hiring process for both candidates and employers.',
                     project_name: "Hiring & Job Portal",
+                    technologies: "Python-Django,Angular",
+                    roles: "Full Stack Developer,Project coordinator",
                 },
                 project3: {
                     title: 'Project 3',
                     description: 'The Pay Later System is a flexible and convenient payment solution that allows customers to make purchases and defer payment to a later date. This system empowers shoppers with the option to buy products or services now and pay for them in installments or after a specified period. With seamless integration into e-commerce platforms and point-of-sale systems, it provides users with a hassle-free way to manage their finances without the burden of immediate full payment. The system offers transparent terms, flexible payment plans, and low-interest rates, ensuring a positive user experience. Additionally, it provides merchants with a secure, efficient way to increase sales by catering to a broader range of customers who may prefer deferred payment options.',
                     project_name: "Pay Later System",
+                    technologies: "Python-Django,Angular",
+                    roles: "Full Stack Developer,Project coordinator",
+
                 },
                 project4: {
                     title: 'Project 4',
                     description: 'The Automotive Claim & Service Booking System is a comprehensive platform developed to streamline the process of insurance claims and service bookings for automotive customers. This system enables users to easily submit and track insurance claims for accidents or damages, while also providing a seamless interface to schedule vehicle services such as repairs, maintenance, and inspections at authorized service centers. Through automation, the platform reduces the paperwork and complexity typically associated with claims processing and service scheduling. Features include real-time claim tracking, secure document uploads, service appointment reminders, and integration with service center management. This project demonstrates my ability to design and implement user-friendly systems that enhance customer experience and improve operational efficiency in the automotive industry.',
                     project_name: "Automotive Claim & Service Booking System",
+                    technologies: "PHP CodeIgniter",
+                    roles: "PHP Developer",
                 },
                 project5: {
                     title: 'Project 5',
                     description: 'The E-Learning Application is an interactive educational platform designed to provide a comprehensive learning experience for users. It includes features for taking tests, practicing skills, and enhancing listening comprehension, offering a wide range of study materials across various subjects. The test-taking functionality allows users to attempt quizzes and exams, track their progress, and receive instant feedback. The practice portal offers interactive exercises, enabling users to strengthen their understanding of key concepts through repeated practice. Additionally, the listening portal helps learners improve their listening skills with audio-based lessons and assessments. With a user-friendly interface and responsive design, this application aims to create an engaging and effective learning environment, whether for academic or professional development.',
                     project_name: "E-Learning Application",
+                    technologies: "PHP Laravel,Angular",
+                    roles: "Full Stack Developer,Project coordinator",
                 },
                 project6: {
                     title: 'Project 6',
                     description: 'I have developed a range of e-commerce applications using WordPress, utilizing its powerful features and flexibility to create tailored solutions for different business needs. These e-commerce websites include a variety of functionalities such as product catalogs, shopping carts, secure payment gateways, and customer management. I have worked on projects involving different types of e-commerce models, including B2B, B2C, subscription-based services, and digital product sales. By leveraging WordPress plugins like WooCommerce, I have customized each platform to meet specific client requirements, from intuitive product browsing to integrated shipping and tax calculators. My expertise in WordPress allows me to deliver responsive, scalable, and user-friendly e-commerce sites that provide an excellent shopping experience for customers while ensuring smooth backend management for business owners.',
                     project_name: "E-Commerce",
+                    technologies: "Wordpress",
+                    roles: "Wordpress Developer",
                 }
             };
 
@@ -549,12 +607,19 @@
             const modalDescription = document.getElementById('modalDescription');
             modalTitle.textContent = selectedProject.project_name;
             modalDescription.textContent = selectedProject.description;
+
+            const modal_technogies = document.getElementById('modal_technogies');
+            const modal_roles = document.getElementById('modal_roles');
+            modal_technogies.textContent = selectedProject.technologies;
+            modal_roles.textContent = selectedProject.roles;
             const modal = document.getElementById('customModal-popup');
             modal.style.display = 'flex';
 
 
 
         }
+
+
 
         // $(document).ready(function () {
         //     let sliderIndex = 0;
@@ -572,6 +637,34 @@
         //     setInterval(moveSlider, 2000); // Move the slider every 2 seconds
         // });
     </script>
+      <script>
+        // Tab Buttons
+        function toggleTab(){
+            const tabs = document.querySelectorAll(".tab");
+        const gridItems = document.querySelectorAll(".grid-item");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                // Filter grid items
+                const category = tab.dataset.category;
+                gridItems.forEach(item => {
+                    if (category === "all" || item.dataset.category === category) {
+                        item.classList.remove("hidden");
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+            });
+        });
+
+        }
+       
+    </script>
+</body>
 </body>
 
 </html>
