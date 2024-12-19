@@ -10,6 +10,9 @@
         content="GitHub portfolio, web developer, open-source projects, software developer, portfolio website, GitHub projects, Angular developer, React developer, Laravel developer, Node.js developer, PHP developer, Python developer">
     <meta name="author" content="Albin Thomas">
     <meta name="robots" content="index, follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
     <title>Albin Thomas-Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -62,11 +65,11 @@
 
             let page = document.querySelector('.page');
 
-            if(item.label==='About Me'){
-               setTimeout(() => {
-                toggleTab(); 
-               },1000);
-                
+            if (item.label === 'About Me') {
+                setTimeout(() => {
+                    toggleTab();
+                }, 1000);
+
             }
             if (!page && item.label != 'Home') {
                 page = document.createElement('div');
@@ -322,7 +325,7 @@
                                 <img src="./img/postgresql-logo-svgrepo-com.svg" alt="Postgres Logo">
                                 <h4>Postgres SQL</h4>
                                 <p>Skilled in working with relational databases using PostgreSQL.</p>
-                               
+
                             </div>
 
 
@@ -335,8 +338,7 @@
                             </div>
 
                             <div class="grid-item" data-category="other">
-                                <img src="./img/git-svgrepo-com.svg"
-                                    alt="Git">
+                                <img src="./img/git-svgrepo-com.svg" alt="Git">
                                 <h4>Git</h4>
                                 <p>Proficient in version control and collaboration using Git.</p>
                             </div>
@@ -544,8 +546,8 @@
                 <h6>Technologies:&nbsp <span id="modal_technogies"></span></h6>
                 <h6>Roles: &nbsp<span id="modal_roles"></span></h6>
             </div>
-            
-            
+
+
         </div>
     </div>
     <script type="text/javascript">
@@ -638,32 +640,32 @@
         //     setInterval(moveSlider, 2000); // Move the slider every 2 seconds
         // });
     </script>
-      <script>
+    <script>
         // Tab Buttons
-        function toggleTab(){
+        function toggleTab() {
             const tabs = document.querySelectorAll(".tab");
-        const gridItems = document.querySelectorAll(".grid-item");
+            const gridItems = document.querySelectorAll(".grid-item");
 
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
 
-                // Filter grid items
-                const category = tab.dataset.category;
-                gridItems.forEach(item => {
-                    if (category === "all" || item.dataset.category === category) {
-                        item.classList.remove("hidden");
-                    } else {
-                        item.classList.add("hidden");
-                    }
+                    // Filter grid items
+                    const category = tab.dataset.category;
+                    gridItems.forEach(item => {
+                        if (category === "all" || item.dataset.category === category) {
+                            item.classList.remove("hidden");
+                        } else {
+                            item.classList.add("hidden");
+                        }
+                    });
                 });
             });
-        });
 
         }
-       
+
     </script>
 </body>
 </body>
